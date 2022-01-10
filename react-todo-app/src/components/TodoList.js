@@ -28,7 +28,7 @@ class TodosList extends React.Component {
   }
 }
 TodosList.propTypes = {
-  todos: PropTypes.array.isRequired,
+  todos: PropTypes.objectOf(PropTypes.array()).isRequired,
   handleChangeProps: PropTypes.func.isRequired,
   deleteTodoProps: PropTypes.func.isRequired,
   setUpdate: PropTypes.func.isRequired,

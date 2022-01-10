@@ -56,7 +56,7 @@ class TodoContainer extends React.Component {
 
   addTodoItem = (title) => {
     const newTodo = {
-      id: 4,
+      id: v4(),
       title,
       completed: false,
     };
@@ -67,15 +67,17 @@ class TodoContainer extends React.Component {
   };
 
   setUpdate = (updatedTitle, id) => {
-    const { todos } = this.state;
-    this.setState({
-      todos: todos.map((todo) => {
+    this.setState((prevState) => ({
+      todos: prevState.todos.map((todo) => {
         if (todo.id === id) {
-          todo.title = updatedTitle;
+          return {
+            ...todo,
+            title: updatedTitle,
+          };
         }
         return todo;
       }),
-    });
+    }));
   }
 
   render() {
