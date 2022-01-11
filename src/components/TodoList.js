@@ -21,7 +21,7 @@ const TodosList = (props) => {
   );
 };
 TodosList.propTypes = {
-  // todos: PropTypes.arrayOf(PropTypes.array()).isRequired,
+  todos: PropTypes.instanceOf(Array).isRequired,
   handleChangeProps: PropTypes.func.isRequired,
   deleteTodoProps: PropTypes.func.isRequired,
   setUpdate: PropTypes.func.isRequired,
